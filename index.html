@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Restauração: O Desafio Final</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Fundo atmosférico -->
+  <div class="bg-layers">
+    <div class="stars"></div>
+    <div class="glow glow-gold"></div>
+    <div class="glow glow-red"></div>
+  </div>
+
+  <main id="app">
+    <!-- ===================== MENU INICIAL ===================== -->
+    <section id="screen-menu" class="screen active">
+      <div class="menu-card">
+        <p class="eyebrow">Ficção narrativa · Temática profética</p>
+        <h1>Restauração</h1>
+        <h2>O Desafio Final</h2>
+        <p class="subtitle">
+          Em um instante, milhões desapareceram. Você ficou para trás.
+          Agora, cada escolha pode fortalecer sua fé — ou entregá-la ao sistema que se ergue sobre o mundo.
+        </p>
+
+        <div class="menu-actions">
+          <button class="btn btn-primary" id="btn-start">Iniciar Jornada</button>
+          <button class="btn btn-ghost" id="btn-about">Sobre o Jogo</button>
+        </div>
+
+        <div id="about-box" class="about-box hidden">
+          <p>
+            <strong>Restauração: O Desafio Final</strong> é uma obra de ficção interativa inspirada em temas
+            escatológicos cristãos. Não pretende estabelecer data, doutrina oficial ou previsão de eventos futuros.
+          </p>
+          <p>
+            Suas decisões alteram os medidores de <span class="gold">Fé/Esperança</span> e
+            <span class="red">Sobrevivência</span>, conduzindo a quatro finais distintos.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== TELA DE JOGO ===================== -->
+    <section id="screen-game" class="screen">
+      <header class="hud">
+        <div class="hud-title">
+          <span class="chapter" id="chapter-label">Capítulo I</span>
+          <span class="location" id="location-label">Cidade em colapso</span>
+        </div>
+
+        <div class="meters">
+          <div class="meter">
+            <div class="meter-head">
+              <span>Fé / Esperança</span>
+              <span id="faith-value">70</span>
+            </div>
+            <div class="bar">
+              <div class="bar-fill faith" id="faith-bar"></div>
+            </div>
+          </div>
+
+          <div class="meter">
+            <div class="meter-head">
+              <span>Sobrevivência</span>
+              <span id="survival-value">70</span>
+            </div>
+            <div class="bar">
+              <div class="bar-fill survival" id="survival-bar"></div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <article class="story-card">
+        <div class="scene-tag" id="scene-tag">Cena</div>
+        <h3 id="scene-title">Título da cena</h3>
+        <div id="story-text" class="story-text"></div>
+
+        <div id="consequence" class="consequence hidden"></div>
+
+        <div id="choices" class="choices"></div>
+
+        <div class="story-actions">
+          <button class="btn btn-ghost small" id="btn-restart">Reiniciar</button>
+        </div>
+      </article>
+    </section>
+
+    <!-- ===================== TELA DE FINAL ===================== -->
+    <section id="screen-ending" class="screen">
+      <article class="ending-card">
+        <p class="eyebrow" id="ending-eyebrow">Final alcançado</p>
+        <h2 id="ending-title">Título do Final</h2>
+        <div id="ending-text" class="story-text"></div>
+
+        <div class="ending-stats">
+          <div><span class="gold">Fé final:</span> <strong id="ending-faith">0</strong></div>
+          <div><span class="red">Sobrevivência final:</span> <strong id="ending-survival">0</strong></div>
+          <div><span>Testemunho público:</span> <strong id="ending-witness">0</strong></div>
+        </div>
+
+        <button class="btn btn-primary" id="btn-play-again">Jogar Novamente</button>
+      </article>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
