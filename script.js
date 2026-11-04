@@ -4,14 +4,30 @@
    ========================================================= */
 
 "use strict";
-let contfinais = 0;
-let valor = 0
-localStorage.setItem('contfinais', contfinais);
-/* ---------- Configurações ---------- */
-const CONSEQUENCE_DELAY = 3000; // Tempo para ler os pontos ganhos/perdidos
-const TYPE_SPEED = 13;          // Velocidade do efeito máquina de escrever
 
-/* ---------- Estado global ---------- */
+/* ---------- SISTEMA DE PROGRESSO DOS FINAIS ---------- */
+
+const STORAGE_KEY = "finaisConcluidos";
+
+function carregarFinaisConcluidos() {
+  try {
+    const salvos = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+    return new Set(Array.isArray(salvos) ? salvos : []);
+  } catch (error) {
+    console.warn("Erro ao carregar finais:", error);
+    return new Set();
+  }
+}
+
+const finaisConcluidos = carregarFinaisConcluidos();
+
+/* ---------- CONFIGURAÇÕES ---------- */
+
+const CONSEQUENCE_DELAY = 3000;
+const TYPE_SPEED = 13;
+
+/* ---------- ESTADO GLOBAL ---------- */
+
 const initialState = {
   faith: 70,
   survival: 70,
@@ -21,11 +37,13 @@ const initialState = {
 
 let state = { ...initialState };
 
-/* ---------- Referências de interface ---------- */
+/* ---------- REFERÊNCIAS DE INTERFACE ---------- */
+
 const screens = {
   menu: document.getElementById("screen-menu"),
   game: document.getElementById("screen-game"),
-  ending: document.getElementById("screen-ending")
+  ending: document.getElementById("screen-ending"),
+  thanks: document.getElementById("screen-thanks")
 };
 
 const els = {
@@ -36,35 +54,44 @@ const els = {
   storyText: document.getElementById("story-text"),
   consequence: document.getElementById("consequence"),
   choices: document.getElementById("choices"),
+
   faithValue: document.getElementById("faith-value"),
   survivalValue: document.getElementById("survival-value"),
+
   faithBar: document.getElementById("faith-bar"),
   survivalBar: document.getElementById("survival-bar"),
+
   endingEyebrow: document.getElementById("ending-eyebrow"),
   endingTitle: document.getElementById("ending-title"),
   endingText: document.getElementById("ending-text"),
+
   endingFaith: document.getElementById("ending-faith"),
   endingSurvival: document.getElementById("ending-survival"),
-  endingWitness: document.getElementById("ending-witness")
+  endingWitness: document.getElementById("ending-witness"),
+  thanksTitle: document.getElementById("thanks-title"),
+  thanksText: document.getElementById("thanks-text")
 };
 
 /* =========================================================
-   ÁRVORE DE DECISÃO EXPANDIDA
+   ÁRVORE DE DECISÃO
    ========================================================= */
+
 const story = {
+
   inicio: {
     chapter: "Capítulo I",
     location: "São Paulo — 03:17",
     tag: "O Silêncio",
     title: "Aqueles que partiram",
-    text:
-      `O despertador ainda tocava quando o mundo mudou.
-   
-   Carros parados no meio da avenida. Portas abertas. Roupas no chão. Uma criança desapareceu do berço, e o noticiário repetia a mesma palavra, atônito: “desaparecimentos em massa”.
-   
-   Você está sozinho no apartamento. Seu celular vibra sem parar. Na rua, alguém grita que isto é um sequestro alienígena; outra voz fala sobre teoria da conspiração. Mas você sabe do que se trata: O cumprimento das Escrituras.
-   
-   Então, batem na sua porta.`,
+
+    text: `O despertador ainda tocava quando o mundo mudou.
+
+Carros parados no meio da avenida. Portas abertas. Roupas no chão. Uma criança desapareceu do berço, e o noticiário repetia a mesma palavra, atônito: “desaparecimentos em massa”.
+
+Você está sozinho no apartamento. Seu celular vibra sem parar. Na rua, alguém grita que isto é um sequestro alienígena; outra voz fala sobre teoria da conspiração. Mas você sabe do que se trata: O cumprimento das Escrituras.
+
+Então, batem na sua porta.`,
+
     choices: [
       {
         label: "Abrir imediatamente: pode ser alguém precisando de ajuda.",
@@ -92,14 +119,15 @@ const story = {
     location: "Apartamento — Corredor",
     tag: "Aliados",
     title: "Pastor Elias e Mara",
-    text:
-      `Do lado de fora estão o Pastor Elias, seu mentor de muitos anos, e Mara, sua amiga de infância.
-   
-   Ele está pálido, mas firme. Mara chora sem conseguir falar.
-   
-   "Não era um pesadelo" diz o pastor, trêmulo “Eles partiram. Não consegui viver aquilo que eu pregava. Nós ficamos. Mas não ficamos sem propósito. Sabemos o que temos que fazer”
-   
-   Ele propõe que os três se refugiem na igreja antiga, no centro da cidade, enquanto o mundo tenta explicar o inexplicável.`,
+
+    text: `Do lado de fora estão o Pastor Elias, seu mentor de muitos anos, e Mara, sua amiga de infância.
+
+Ele está pálido, mas firme. Mara chora sem conseguir falar.
+
+"Não era um pesadelo" diz o pastor, trêmulo “Eles partiram. Não consegui viver aquilo que eu pregava. Nós ficamos. Mas não ficamos sem propósito. Sabemos o que temos que fazer”
+
+Ele propõe que os três se refugiem na igreja antiga, no centro da cidade, enquanto o mundo tenta explicar o inexplicável.`,
+
     choices: [
       {
         label: "Ir com eles à igreja. Vocês precisam uns dos outros.",
@@ -127,15 +155,16 @@ const story = {
     location: "Igreja Antiga — Porão",
     tag: "Refúgio",
     title: "A primeira noite sem eles",
-    text:
-      `No porão da igreja, dezenas de pessoas buscam abrigo. Há oração, medo e fome.
-   
-   Pela rádio, um líder político desconhecido anuncia um “novo pacto global para restaurar a ordem”. Seu nome é Adrián Vael. Ele promete paz, alimentos e segurança.
-   
-   Mara observa você no escuro:
-   “Você acha que ele é... aquele de quem o pastor sempre falava?”
-   
-   Antes de responder, um grupo bate à porta pedindo comida e remédios.`,
+
+    text: `No porão da igreja, dezenas de pessoas buscam abrigo. Há oração, medo e fome.
+
+Pela rádio, um líder político desconhecido anuncia um “novo pacto global para restaurar a ordem”. Seu nome é Adrián Vael. Ele promete paz, alimentos e segurança.
+
+Mara observa você no escuro:
+“Você acha que ele é... aquele de quem o pastor sempre falava?”
+
+Antes de responder, um grupo bate à porta pedindo comida e remédios.`,
+
     choices: [
       {
         label: "Dividir os suprimentos com todos, mesmo que falte para vocês.",
@@ -163,13 +192,14 @@ const story = {
     location: "Igreja Antiga — Salão Principal",
     tag: "As Duas Testemunhas",
     title: "Fogo sobre Jerusalém",
-    text:
-      `As transmissões globais mostram duas figuras em Jerusalém, vestidas de saco, pregando diante das nações.
-   
-   Elas advertem sobre julgamento, chamam ao arrependimento e anunciam que o poder humano não salvará o mundo. Governos as chamam de terroristas religiosos. Multidões as odeiam — e, ainda assim, não conseguem ignorá-las.
-   
-   O Pastor Elias se aproxima:
-   “Se elas são reais, então também somos chamados a testemunhar. Mas testemunhar terá um preço.”`,
+
+    text: `As transmissões globais mostram duas figuras em Jerusalém, vestidas de saco, pregando diante das nações.
+
+Elas advertem sobre julgamento, chamam ao arrependimento e anunciam que o poder humano não salvará o mundo. Governos as chamam de terroristas religiosos. Multidões as odeiam — e, ainda assim, não conseguem ignorá-las.
+
+O Pastor Elias se aproxima:
+“Se elas são reais, então também somos chamados a testemunhar. Mas testemunhar terá um preço.”`,
+
     choices: [
       {
         label: "Registrar e divulgar a mensagem delas pela rede clandestina.",
@@ -197,12 +227,13 @@ const story = {
     location: "Margens do Rio Tietê",
     tag: "Êxodo",
     title: "A cidade que não dorme",
-    text:
-      `A igreja não é mais segura. Milícias armadas controlam pontes, postos de gasolina e farmácias. Nas ruas, cartazes prometem “ordem, pão e proteção” a quem se registrar no novo sistema.
-   
-   O Pastor Elias conhece uma rota pelos bairros ribeirinhos, onde antigos membros da congregação podem oferecer abrigo.
-   
-   Mara está febril. O grupo precisa decidir antes do amanhecer.`,
+
+    text: `A igreja não é mais segura. Milícias armadas controlam pontes, postos de gasolina e farmácias. Nas ruas, cartazes prometem “ordem, pão e proteção” a quem se registrar no novo sistema.
+
+O Pastor Elias conhece uma rota pelos bairros ribeirinhos, onde antigos membros da congregação podem oferecer abrigo.
+
+Mara está febril. O grupo precisa decidir antes do amanhecer.`,
+
     choices: [
       {
         label: "Seguir a rota do pastor, mesmo sendo mais longa.",
@@ -230,12 +261,13 @@ const story = {
     location: "Galpão abandonado — Zona Leste",
     tag: "Refugiados",
     title: "Os que ainda esperam",
-    text:
-      `No galpão, vocês encontram um pequeno acampamento: famílias, idosos, jovens e alguns que perderam tudo na primeira noite.
-   
-   Uma mulher chamada Helena organiza a distribuição de água. Ela reconhece o Pastor Elias e oferece abrigo — com uma condição.
-   
-   “Amanhã, um caminhão do sistema passa por aqui. Eles oferecem comida, remédios e transporte. Quem aceitar a marca entra. Quem recusar... precisa ir embora antes do meio-dia.”`,
+
+    text: `No galpão, vocês encontram um pequeno acampamento: famílias, idosos, jovens e alguns que perderam tudo na primeira noite.
+
+Uma mulher chamada Helena organiza a distribuição de água. Ela reconhece o Pastor Elias e oferece abrigo — com uma condição.
+
+“Amanhã, um caminhão do sistema passa por aqui. Eles oferecem comida, remédios e transporte. Quem aceitar a marca entra. Quem recusar... precisa ir embora antes do meio-dia.”`,
+
     choices: [
       {
         label: "Ficar e ajudar Helena a preparar a partida dos que recusarem.",
@@ -263,15 +295,16 @@ const story = {
     location: "Transmissão Global",
     tag: "O Governante",
     title: "O homem que prometeu paz",
-    text:
-      `Adrián Vael é aclamado como o homem capaz de unir nações em crise. Ele resolve guerras, estabiliza mercados e fala de uma humanidade finalmente madura.
-   
-   Depois, em um discurso silencioso, ele anuncia um sistema de identificação universal para acesso a alimentos, transporte e segurança.
-   
-   “Quem se recusar”, diz ele com um sorriso calmo, “escolherá ficar fora da nova humanidade.”
-   
-   O Pastor Elias fecha os olhos:
-   “Chegou a hora de decidir quem somos.”`,
+
+    text: `Adrián Vael é aclamado como o homem capaz de unir nações em crise. Ele resolve guerras, estabiliza mercados e fala de uma humanidade finalmente madura.
+
+Depois, em um discurso silencioso, ele anuncia um sistema de identificação universal para acesso a alimentos, transporte e segurança.
+
+“Quem se recusar”, diz ele com um sorriso calmo, “escolherá ficar fora da nova humanidade.”
+
+O Pastor Elias fecha os olhos:
+“Chegou a hora de decidir quem somos.”`,
+
     choices: [
       {
         label: "Recusar publicamente o sistema, mesmo sabendo do custo.",
@@ -299,13 +332,14 @@ const story = {
     location: "Praça da Concórdia",
     tag: "O Falso Profeta",
     title: "Um milagre que engana",
-    text:
-      `Um líder religioso carismático sobe ao palco ao lado de Vael. Ele fala de amor, unidade e milagres. Fogo desce do céu diante das câmeras, e a multidão cai de joelhos.
-   
-   “Não há mais divisão”, proclama ele. “Todas as religiões se curvarão ao mesmo altar. Quem amar a humanidade receberá a marca da paz.”
-   
-   Mara agarra seu braço. O pastor sussurra:
-   “Nem todo fogo vem do céu de Deus.”`,
+
+    text: `Um líder religioso carismático sobe ao palco ao lado de Vael. Ele fala de amor, unidade e milagres. Fogo desce do céu diante das câmeras, e a multidão cai de joelhos.
+
+“Não há mais divisão”, proclama ele. “Todas as religiões se curvarão ao mesmo altar. Quem amar a humanidade receberá a marca da paz.”
+
+Mara agarra seu braço. O pastor sussurra:
+“Nem todo fogo vem do céu de Deus.”`,
+
     choices: [
       {
         label: "Gritar a verdade diante da multidão.",
@@ -333,14 +367,15 @@ const story = {
     location: "Centro de Retenção — Setor 7",
     tag: "Prisão",
     title: "A sala das perguntas",
-    text:
-      `Vocês são separados.
-   
-   Em uma sala branca, um agente do sistema coloca à sua frente um tablet. Na tela, aparece a foto de Mara e do Pastor Elias.
-   
-   “Eles serão liberados”, diz o agente. “Você só precisa confirmar sua lealdade à nova ordem humana.”
-   
-   A porta atrás de você se tranca. Há uma caneta sobre a mesa.`,
+
+    text: `Vocês são separados.
+
+Em uma sala branca, um agente do sistema coloca à sua frente um tablet. Na tela, aparece a foto de Mara e do Pastor Elias.
+
+“Eles serão liberados”, diz o agente. “Você só precisa confirmar sua lealdade à nova ordem humana.”
+
+A porta atrás de você se tranca. Há uma caneta sobre a mesa.`,
+
     choices: [
       {
         label: "Recusar. Nenhuma liberdade vale a negação do que você crê.",
@@ -368,15 +403,16 @@ const story = {
     location: "Complexo do Sistema — Corredores",
     tag: "Resgate",
     title: "As luzes se apagam",
-    text:
-      `Um blecaute atinge o complexo. Alarmes cortam o ar. Alguém abriu os bloqueios do setor — Helena e alguns refugiados do galpão arriscaram-se para tirar vocês de lá.
-   
-   Mara encontra você primeiro. Ela está magra, machucada, mas viva.
-   
-   “Eu sabia que você voltaria”, diz ela.
-   
-   O Pastor Elias olha para o corredor escuro:
-   “Ainda não acabou. O sistema vai nos caçar — mas agora sabemos onde estão os fracos, os famintos e os esquecidos.”`,
+
+    text: `Um blecaute atinge o complexo. Alarmes cortam o ar. Alguém abriu os bloqueios do setor — Helena e alguns refugiados do galpão arriscaram-se para tirar vocês de lá.
+
+Mara encontra você primeiro. Ela está magra, machucada, mas viva.
+
+“Eu sabia que você voltaria”, diz ela.
+
+O Pastor Elias olha para o corredor escuro:
+“Ainda não acabou. O sistema vai nos caçar — mas agora sabemos onde estão os fracos, os famintos e os esquecidos.”`,
+
     choices: [
       {
         label: "Voltar para resgatar outros detentos antes de fugir.",
@@ -404,12 +440,13 @@ const story = {
     location: "Estrada de terra — Interior",
     tag: "Cisma",
     title: "O preço de continuar",
-    text:
-      `Dias depois, o grupo alcança uma fazenda abandonada. Há água, uma horta improvisada e silêncio — por enquanto.
-   
-   Mas o cansaço cria rachaduras. Alguns querem seguir para o encontro secreto dos fiéis. Outros querem se esconder para sempre. Helena defende que voltar às cidades é suicídio.
-   
-   O Pastor Elias chama você para decidir o rumo.`,
+
+    text: `Dias depois, o grupo alcança uma fazenda abandonada. Há água, uma horta improvisada e silêncio — por enquanto.
+
+Mas o cansaço cria rachaduras. Alguns querem seguir para o encontro secreto dos fiéis. Outros querem se esconder para sempre. Helena defende que voltar às cidades é suicídio.
+
+O Pastor Elias chama você para decidir o rumo.`,
+
     choices: [
       {
         label: "Propor que cada um escolha seu caminho, sem condenação.",
@@ -437,12 +474,13 @@ const story = {
     location: "Fazenda abandonada",
     tag: "Cerco",
     title: "Eles encontraram vocês",
-    text:
-      `Ao amanhecer, drones sobrevoam a fazenda. Caminhões blindados cercam a estrada. O sistema oferece uma última chance: entregar o Pastor Elias e os líderes do grupo em troca de proteção para todos os demais.
-   
-   Mara segura sua mão. Helena chora em silêncio. Elias sorri, sereno.
-   
-   “Não me entreguem”, diz ele. “Mas não deixem que o medo decida por vocês.”`,
+
+    text: `Ao amanhecer, drones sobrevoam a fazenda. Caminhões blindados cercam a estrada. O sistema oferece uma última chance: entregar o Pastor Elias e os líderes do grupo em troca de proteção para todos os demais.
+
+Mara segura sua mão. Helena chora em silêncio. Elias sorri, sereno.
+
+“Não me entreguem”, diz ele. “Mas não deixem que o medo decida por vocês.”`,
+
     choices: [
       {
         label: "Recusar a barganha e preparar a fuga de todos.",
@@ -470,14 +508,15 @@ const story = {
     location: "Cidade sitiada",
     tag: "Grande Tribulação",
     title: "A noite mais longa",
-    text:
-      `O mundo se parte em julgamentos, fome e perseguição. As Duas Testemunhas são mortas diante do mundo — e, três dias depois, ressuscitam e sobem aos céus diante de todas as câmeras.
-   
-   O sistema entra em colapso. Vael declara guerra contra tudo o que lembra Deus.
-   
-   No abrigo, você reúne os remanescentes. Há pouco alimento, pouca esperança e nenhuma garantia — exceto uma promessa antiga.
-   
-   Então o céu se abre.`,
+
+    text: `O mundo se parte em julgamentos, fome e perseguição. As Duas Testemunhas são mortas diante do mundo — e, três dias depois, ressuscitam e sobem aos céus diante de todas as câmeras.
+
+O sistema entra em colapso. Vael declara guerra contra tudo o que lembra Deus.
+
+No abrigo, você reúne os remanescentes. Há pouco alimento, pouca esperança e nenhuma garantia — exceto uma promessa antiga.
+
+Então o céu se abre.`,
+
     choices: [
       {
         label: "Levantar os olhos e proclamar: “Eis que vem com as nuvens.”",
@@ -505,33 +544,36 @@ const story = {
     location: "Céu e terra",
     tag: "A Volta",
     title: "O Rei que retorna",
-    text:
-      `A luz não pede licença.
-   
-   Ela rasga os céus, silencia os exércitos e revela o Rei. O que parecia vitorioso desmorona; o que parecia perdido é restaurado.
-   
-   Diante da glória, cada escolha que você fez retorna ao seu coração — não como acusação, mas como testemunho do caminho que escolheu.`,
+
+    text: `A luz não pede licença.
+
+Ela rasga os céus, silencia os exércitos e revela o Rei. O que parecia vitorioso desmorona; o que parecia perdido é restaurado.
+
+Diante da glória, cada escolha que você fez retorna ao seu coração — não como acusação, mas como testemunho do caminho que escolheu.`,
+
     choices: [],
     ending: "auto"
   },
 
-  /* ---------- Finais ---------- */
+  /* ---------- FINAIS ---------- */
+
   final_martir: {
     chapter: "Final",
     location: "Praça diante das Testemunhas",
     tag: "Mártir",
     title: "O Mártir",
-    text:
-      `Você permanece ao lado das Duas Testemunhas quando os soldados chegam.
-   
-   Sua voz falha, mas não se cala. Você fala de perdão, de esperança e de um Reino que não se constrói com medo.
-   
-   Quando tudo escurece, você não vê a multidão — vê apenas uma luz.
-   
-   E, no instante seguinte, ouve:
-   “Bem-vindo ao descanso do teu Senhor.”
-   
-   Você selou seu testemunho com a própria vida.`,
+
+    text: `Você permanece ao lado das Duas Testemunhas quando os soldados chegam.
+
+Sua voz falha, mas não se cala. Você fala de perdão, de esperança e de um Reino que não se constrói com medo.
+
+Quando tudo escurece, você não vê a multidão — vê apenas uma luz.
+
+E, no instante seguinte, ouve:
+“Bem-vindo ao descanso do teu Senhor.”
+
+Você selou seu testemunho com a própria vida.`,
+
     ending: "martir"
   },
 
@@ -540,14 +582,15 @@ const story = {
     location: "Assentamento do Sistema",
     tag: "Apostasia",
     title: "A Marca",
-    text:
-      `A marca é indolor. Um breve calor na mão, uma linha de luz, e as portas se abrem.
-   
-   Você come. Você dorme. Você está seguro.
-   
-   Mas, nas noites seguintes, o silêncio dentro de você se torna insuportável. Mara olha para você como quem olha para um estranho. O Pastor Elias reza por você à distância.
-   
-   Quando o Rei retorna, você está protegido pelo sistema — e profundamente sozinho.`,
+
+    text: `A marca é indolor. Um breve calor na mão, uma linha de luz, e as portas se abrem.
+
+Você come. Você dorme. Você está seguro.
+
+Mas, nas noites seguintes, o silêncio dentro de você se torna insuportável. Mara olha para você como quem olha para um estranho. O Pastor Elias reza por você à distância.
+
+Quando o Rei retorna, você está protegido pelo sistema — e profundamente sozinho.`,
+
     ending: "marca"
   },
 
@@ -556,21 +599,24 @@ const story = {
     location: "Ruínas além da cidade",
     tag: "Ocultação",
     title: "A Fuga",
-    text:
-      `Você sobrevive.
-   
-   Nas ruínas, entre águas contaminadas e noites sem lua, você aprende a não fazer ruído, não acender fogo e não confiar em ninguém.
-   
-   A fé não morreu de uma vez. Ela foi apagando-se como uma vela em corrente de ar.
-   
-   Quando os céus se abrem, você se encolhe nas sombras — vivo, porém exausto, e perguntando se ainda é capaz de reconhecer a luz.`,
+
+    text: `Você sobrevive.
+
+Nas ruínas, entre águas contaminadas e noites sem lua, você aprende a não fazer ruído, não acender fogo e não confiar em ninguém.
+
+A fé não morreu de uma vez. Ela foi apagando-se como uma vela em corrente de ar.
+
+Quando os céus se abrem, você se encolhe nas sombras — vivo, porém exausto, e perguntando se ainda é capaz de reconhecer a luz.`,
+
     ending: "fuga"
   },
-  agradecimentos:{
-    chapter:"Créditos",
-    tag:"Agradecimento",
-    title:"Agradecimentos",
-    text:`Obrigado por Jogar. Embora pareça um jogo de ficção, tudo que está no jogo ainda está destinado para acontecer, portanto, arrependa-se de seus pecados e volte para Jesus, pois Ele tem um lugar na mesa reservado para você.
+
+  agradecimentos: {
+    chapter: "Créditos",
+    tag: "Agradecimento",
+    title: "Agradecimentos",
+
+    text: `Obrigado por Jogar. Embora pareça um jogo de ficção, tudo que está no jogo ainda está destinado para acontecer, portanto, arrependa-se de seus pecados e volte para Jesus, pois Ele tem um lugar na mesa reservado para você.
 
 Feito por João Henrique`
   }
@@ -579,78 +625,89 @@ Feito por João Henrique`
 /* =========================================================
    FINAIS PRINCIPAIS
    ========================================================= */
+
 const endings = {
+
   coroa: {
     eyebrow: "Final da Coroa da Vida",
     title: "Coroa da Vida",
-    text:
-      `Você resistiu ao sistema, manteve a fé e não negou a esperança — nem quando o mundo exigiu que a trocasse por segurança.
-   
-   Quando Cristo retorna, você não se esconde. Você levanta os olhos. E você ouve Ele falar: "Vinde, benditos de meu Pai, possuí por herança o reino que vos está preparado desde a fundação do mundo;
 
-   
-   A coroa não é prêmio por ser forte; é promessa cumprida para quem permaneceu fiel até o fim.
-   
-   Agora, você pode descansar, pois a perseguição acabou. 
-   "E, eis que cedo venho, e o meu galardão está comigo, para dar a cada um segundo a sua obra.
-   Eu sou o Alfa e o Ômega, o princípio e o fim, o primeiro e o derradeiro.
-   Bem-aventurados aqueles que guardam os seus mandamentos, para que tenham direito à árvore da vida, e possam entrar na cidade pelas portas.
-   Mas, ficarão de fora os cães e os feiticeiros, e os fornicadores, e os homicidas, e os idólatras, e qualquer que ama e comete mentira.
-   Eu, Jesus, enviei o meu anjo, para vos testificar estas coisas nas igrejas. Eu sou a raiz e a geração de Davi, a resplandecente estrela da manhã.
-   E o Espírito e a esposa dizem: Vem. E quem ouve, diga: Vem. E quem tem sede, venha; e quem quiser, tome de graça da água da vida." Apocalipse 22:12-20
-   `
+    text: `Você resistiu ao sistema, manteve a fé e não negou a esperança — nem quando o mundo exigiu que a trocasse por segurança.
+
+Quando Cristo retorna, você não se esconde. Você levanta os olhos. E você ouve Ele falar: "Vinde, benditos de meu Pai, possuí por herança o reino que vos está preparado desde a fundação do mundo;
+
+A coroa não é prêmio por ser forte; é promessa cumprida para quem permaneceu fiel até o fim.
+
+Agora, você pode descansar, pois a perseguição acabou.
+
+"E, eis que cedo venho, e o meu galardão está comigo, para dar a cada um segundo a sua obra.
+Eu sou o Alfa e o Ômega, o princípio e o fim, o primeiro e o derradeiro.
+Bem-aventurados aqueles que guardam os seus mandamentos, para que tenham direito à árvore da vida, e possam entrar na cidade pelas portas.
+Mas, ficarão de fora os cães e os feiticeiros, e os fornicadores, e os homicidas, e os idólatras, e qualquer que ama e comete mentira.
+Eu, Jesus, enviei o meu anjo, para vos testificar estas coisas nas igrejas. Eu sou a raiz e a geração de Davi, a resplandecente estrela da manhã.
+E o Espírito e a esposa dizem: Vem. E quem ouve, diga: Vem. E quem tem sede, venha; e quem quiser, tome de graça da água da vida." Apocalipse 22:12-20`
   },
+
   martir: {
     eyebrow: "Final do Mártir",
     title: "O Mártir",
-    text:
-      `Você escolheu testemunhar quando o silêncio era mais seguro.
-   
-   Sua vida terminou diante do mundo, mas seu testemunho permaneceu. Aqueles que viram sua coragem encontraram coragem para crer.
-   "Porque aquele que quiser salvar a sua vida, perdê-la-á, e quem perder a sua vida por amor de mim, achá-la-á." Mateus 16:25
 
-   `
+    text: `Você escolheu testemunhar quando o silêncio era mais seguro.
+
+Sua vida terminou diante do mundo, mas seu testemunho permaneceu. Aqueles que viram sua coragem encontraram coragem para crer.
+
+"Porque aquele que quiser salvar a sua vida, perdê-la-á, e quem perder a sua vida por amor de mim, achá-la-á." Mateus 16:25`
   },
+
   marca: {
     eyebrow: "Final da Marca",
     title: "A Marca da Apostasia",
-    text:
-      `Você escolheu o conforto do sistema em vez da fidelidade ao Rei.
-   
-   Por um tempo, houve segurança. Depois veio o vazio — e, por fim, a separação da luz.
-   
-   A porta que você abriu por medo se tornou a prisão que você não conseguiu deixar.
 
-   “E os seguiu o terceiro anjo, dizendo com grande voz: Se alguém adorar a besta e a sua imagem e receber o sinal na testa ou na mão, 
-   também o tal beberá do vinho da ira de Deus, que se deitou, não misturado, 
-   no cálice da sua ira, e será atormentado com fogo e enxofre diante dos santos anjos e diante do Cordeiro.” Apocalipse 14:9-10
-   `
+    text: `Você escolheu o conforto do sistema em vez da fidelidade ao Rei.
+
+Por um tempo, houve segurança. Depois veio o vazio — e, por fim, a separação da luz.
+
+A porta que você abriu por medo se tornou a prisão que você não conseguiu deixar.
+
+“E os seguiu o terceiro anjo, dizendo com grande voz: Se alguém adorar a besta e a sua imagem e receber o sinal na testa ou na mão,
+também o tal beberá do vinho da ira de Deus, que se deitou, não misturado,
+no cálice da sua ira, e será atormentado com fogo e enxofre diante dos santos anjos e diante do Cordeiro.” Apocalipse 14:9-10`
   },
+
   fuga: {
     eyebrow: "Final da Fuga",
     title: "Oculto nas Sombras",
-    text:
-      `Você sobreviveu, mas sobreviver custou caro.
-   
-   Escondido das perseguições, você também se escondeu da esperança. Quando a luz finalmente desceu, você estava vivo — mas com o coração enfraquecido e a fé reduzida a uma brasa tremendo.
-   
-   `
+
+    text: `Você sobreviveu, mas sobreviver custou caro.
+
+Escondido das perseguições, você também se escondeu da esperança. Quando a luz finalmente desceu, você estava vivo — mas com o coração enfraquecido e a fé reduzida a uma brasa tremendo.`
   }
 };
 
 /* =========================================================
-   Utilidades
+   UTILIDADES
    ========================================================= */
-const clamp = (value, min = 0, max = 100) => Math.max(min, Math.min(max, value));
+
+const clamp = (value, min = 0, max = 100) =>
+  Math.max(min, Math.min(max, value));
 
 function showScreen(name) {
-  Object.values(screens).forEach(screen => screen.classList.remove("active"));
+  Object.values(screens).forEach(screen => {
+    if (screen) screen.classList.remove("active");
+  });
+
+  if (!screens[name]) {
+    console.error(`Tela não encontrada: ${name}`);
+    return;
+  }
+
   screens[name].classList.add("active");
 }
 
 function updateMeters() {
   els.faithValue.textContent = state.faith;
   els.survivalValue.textContent = state.survival;
+
   els.faithBar.style.width = `${state.faith}%`;
   els.survivalBar.style.width = `${state.survival}%`;
 }
@@ -659,6 +716,7 @@ function applyEffects(effects = {}) {
   state.faith = clamp(state.faith + (effects.faith || 0));
   state.survival = clamp(state.survival + (effects.survival || 0));
   state.witness += effects.witness || 0;
+
   updateMeters();
 }
 
@@ -667,44 +725,66 @@ function showConsequence(message, effects = {}) {
   const survivalChange = effects.survival || 0;
 
   let tone = "neutral";
-  if (faithChange > 0 || survivalChange > 0) tone = "positive";
-  if (faithChange < 0 || survivalChange < 0) tone = "negative";
+
+  if (faithChange > 0 || survivalChange > 0) {
+    tone = "positive";
+  }
+
+  if (faithChange < 0 || survivalChange < 0) {
+    tone = "negative";
+  }
 
   const parts = [message];
 
   if (faithChange !== 0) {
-    parts.push(`Fé: ${faithChange > 0 ? "+" : ""}${faithChange} pontos`);
+    parts.push(
+      `Fé: ${faithChange > 0 ? "+" : ""}${faithChange} pontos`
+    );
   }
 
   if (survivalChange !== 0) {
-    parts.push(`Sobrevivência: ${survivalChange > 0 ? "+" : ""}${survivalChange} pontos`);
+    parts.push(
+      `Sobrevivência: ${survivalChange > 0 ? "+" : ""}${survivalChange} pontos`
+    );
   }
 
   if (effects.witness) {
-    parts.push(`Testemunho: +${effects.witness} ponto${effects.witness > 1 ? "s" : ""}`);
+    parts.push(
+      `Testemunho: +${effects.witness} ponto${effects.witness > 1 ? "s" : ""}`
+    );
   }
 
   els.consequence.textContent = parts.join("  •  ");
   els.consequence.className = `consequence ${tone}`;
 }
 
-/* Efeito máquina de escrever */
+/* =========================================================
+   EFEITO MÁQUINA DE ESCREVER
+   ========================================================= */
+
 let typingTimer = null;
 
 function typeText(target, text, speed = TYPE_SPEED) {
   clearInterval(typingTimer);
+
   target.textContent = "";
+
   let index = 0;
 
   typingTimer = setInterval(() => {
     target.textContent += text[index++];
-    if (index >= text.length) clearInterval(typingTimer);
+
+    if (index >= text.length) {
+      clearInterval(typingTimer);
+      typingTimer = null;
+    }
   }, speed);
 }
 
 /* =========================================================
-   Renderização de cenas
+   RENDERIZAÇÃO DE CENAS
    ========================================================= */
+
 function renderNode(nodeId) {
   const node = story[nodeId];
 
@@ -722,74 +802,123 @@ function renderNode(nodeId) {
 
   els.consequence.className = "consequence hidden";
   els.consequence.textContent = "";
+
   els.choices.innerHTML = "";
 
   typeText(els.storyText, node.text);
 
-  /* Se o nó leva diretamente a um final */
+  /* Verifica se a cena leva diretamente a um final */
+
   if (node.ending) {
     setTimeout(() => resolveEnding(node.ending), 2500);
     return;
   }
 
   node.choices.forEach(choice => {
+
     const button = document.createElement("button");
-    button.className = `choice ${choice.effects?.faith < 0 || choice.effects?.survival < 0 ? "danger" : ""
+
+    button.className =
+      `choice ${
+        choice.effects?.faith < 0 ||
+        choice.effects?.survival < 0
+          ? "danger"
+          : ""
       }`;
+
     button.textContent = choice.label;
 
     button.addEventListener("click", () => {
+
       applyEffects(choice.effects);
+
       showConsequence(choice.consequence, choice.effects);
 
-      /* Aguarda 3 segundos para o jogador ver claramente
-         quantos pontos de Fé, Sobrevivência e Testemunho recebeu */
-      setTimeout(() => renderNode(choice.next), CONSEQUENCE_DELAY);
+      setTimeout(() => {
+        renderNode(choice.next);
+      }, CONSEQUENCE_DELAY);
+
     });
 
     els.choices.appendChild(button);
+
   });
 }
 
 /* =========================================================
-   Lógica de finais
+   LÓGICA DOS FINAIS
    ========================================================= */
+
 function resolveEnding(type) {
+
   let endingKey;
 
-  if (type === "martir") endingKey = "martir";
-  else if (type === "marca") endingKey = "marca";
-  else if (type === "fuga") endingKey = "fuga";
-  else {
+  if (type === "martir") {
+
+    endingKey = "martir";
+
+  } else if (type === "marca") {
+
+    endingKey = "marca";
+
+  } else if (type === "fuga") {
+
+    endingKey = "fuga";
+
+  } else {
+
     /* Final calculado após a Volta de Cristo */
+
     if (state.faith >= 80 && state.witness >= 10) {
-      valor = localStorage.getItem('contfinais')
 
       endingKey = "coroa";
-      contfinais++
-      valor = localStorage.setItem('contfinais', contfinais)
+
     } else if (state.faith <= 25) {
-      valor = localStorage.getItem('contfinais')
+
       endingKey = "marca";
-      contfinais++
-      valor = localStorage.setItem('contfinais', contfinais)
+
     } else if (state.survival >= 85 && state.faith < 55) {
-      valor = localStorage.getItem('contfinais')
+
       endingKey = "fuga";
-      contfinais++
-      valor = localStorage.setItem('contfinais', contfinais)
+
     } else {
-      valor = localStorage.getItem('contfinais')
+
       endingKey = "coroa";
-      contfinais++
-      valor = localStorage.setItem('contfinais', contfinais)
+
     }
   }
 
   const ending = endings[endingKey];
-  
+
+  if (!ending) {
+    console.error(`Final não encontrado: ${endingKey}`);
+    return;
+  }
+
+  /* Registra o final sem duplicar */
+
+  finaisConcluidos.add(endingKey);
+
+  /* Salva o progresso no navegador */
+
+  try {
+
+    localStorage.setItem(
+      STORAGE_KEY,
+      JSON.stringify([...finaisConcluidos])
+    );
+
+  } catch (error) {
+
+    console.error("Erro ao salvar os finais:", error);
+
+  }
+
+  /* Preenche a tela de final */
+
   els.endingEyebrow.textContent = ending.eyebrow;
   els.endingTitle.textContent = ending.title;
+
   typeText(els.endingText, ending.text, 12);
 
   els.endingFaith.textContent = state.faith;
@@ -797,29 +926,77 @@ function resolveEnding(type) {
   els.endingWitness.textContent = state.witness;
 
   showScreen("ending");
-  if (Number(localStorage.getItem("contfinais"))===4){
-    renderNode('agradecimentos')
+
+  /* Verifica se todos os quatro finais foram concluídos */
+
+  const totalFinais = Object.keys(endings).length;
+
+  if (finaisConcluidos.size >= totalFinais) {
+
+    /* Aguarda oito segundos para permitir a leitura do último final */
+
+    setTimeout(() => {
+
+    // Interrompe qualquer animação de texto anterior
+    clearInterval(typingTimer);
+    typingTimer = null;
+
+    // Recupera os dados da tela de agradecimentos
+    const thanks = story.agradecimentos;
+
+    // Insere o título e o texto no HTML
+    els.thanksTitle.textContent = thanks.title;
+    els.thanksText.textContent = thanks.text;
+
+    // Exibe a tela
+    showScreen("thanks");
+
+}, 8000);
+
   }
-  setTimeout()
+
 }
 
 /* =========================================================
-   Controles
+   CONTROLES
    ========================================================= */
+
 function startGame() {
+
   state = { ...initialState };
+
   updateMeters();
+
   showScreen("game");
+
   renderNode("inicio");
+
 }
 
-document.getElementById("btn-start").addEventListener("click", startGame);
-document.getElementById("btn-play-again").addEventListener("click", startGame);
-document.getElementById("btn-restart").addEventListener("click", startGame);
+document
+  .getElementById("btn-start")
+  .addEventListener("click", startGame);
 
-document.getElementById("btn-about").addEventListener("click", () => {
-  document.getElementById("about-box").classList.toggle("hidden");
-});
+document
+  .getElementById("btn-play-again")
+  .addEventListener("click", startGame);
 
-/* Inicialização */
+document
+  .getElementById("btn-restart")
+  .addEventListener("click", startGame);
+
+document
+  .getElementById("btn-about")
+  .addEventListener("click", () => {
+
+    document
+      .getElementById("about-box")
+      .classList.toggle("hidden");
+
+  });
+
+/* =========================================================
+   INICIALIZAÇÃO
+   ========================================================= */
+
 updateMeters();

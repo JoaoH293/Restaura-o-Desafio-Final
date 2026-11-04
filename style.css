@@ -2,7 +2,9 @@
    Restauração: O Desafio Final
    Design escuro, imersivo e responsivo
    ========================================================= */
-
+#thanks-text {
+    white-space: pre-line;
+}
    :root {
     --bg: #07080b;
     --bg-2: #0d1017;
