@@ -1,0 +1,672 @@
+# FLUXOGRAMA COMPLETO — JOGO
+
+## 1. O DESPERTAR
+
+O despertador ainda tocava quando o mundo mudou.
+
+Carros parados no meio da avenida. Portas abertas. Roupas no chão. Uma criança desapareceu do berço, e o noticiário repetia a mesma palavra, atônito: “desaparecimentos em massa”.
+
+Você está sozinho no apartamento. Seu celular vibra sem parar. Na rua, alguém grita que isto é um sequestro alienígena; outra voz fala sobre teoria da conspiração. Mas você sabe do que se trata: o cumprimento das Escrituras.
+
+Então, batem à sua porta.
+
+**Escolhas:**
+- Abrir a porta imediatamente.
+- Olhar pelo olho mágico.
+- Não abrir a porta.
+
+### 1.1. Abrir a porta ou olhar pelo olho mágico
+
+As duas escolhas levam à mesma cena.
+
+Do lado de fora estão o Pastor Elias, seu mentor de muitos anos, e Mara, sua amiga de infância.
+
+Ele está pálido, mas firme. Mara chora sem conseguir falar.
+
+**Pastor Elias:** “Não era um pesadelo. Eles partiram. Não consegui viver aquilo que eu pregava. Nós ficamos. Mas não ficamos sem propósito. Sabemos o que temos que fazer.”
+
+Ele propõe que os três se refugiem na igreja antiga, no centro da cidade, enquanto o mundo tenta explicar o inexplicável.
+
+**Escolhas:**
+1. Ir com eles.
+2. Propor um plano mais seguro.
+3. Dizer que não sabe se ainda acredita em algo.
+
+#### 1.1.1. Ir com eles
+
+Seguir para **2. A IGREJA ANTIGA E AS DUAS TESTEMUNHAS**.
+
+#### 1.1.2. Propor um plano mais seguro
+
+Enquanto vocês tentam bolar um plano, alguém bate à porta repentinamente. Você olha pelo olho mágico e vê policiais prontos para entrar.
+
+**Escolhas:**
+- Fugir com eles.
+- Abrir a porta.
+
+**Fugir com eles:**
+
+Você foge pela escada de emergência, levando apenas sua Bíblia. Ao longe, vê seu apartamento sendo esvaziado e seus pertences sendo queimados, pois o prédio seria destinado aos beneficiários do Fundo da Paz.
+
+Você prega o Evangelho por onde passa, participa de encontros escondidos e permanece firme.
+
+Em três anos e meio, o sistema intensifica as perseguições. Você já está cansado, mas então vê uma luz rasgar os céus.
+
+→ **FINAL COROA DA VIDA**
+
+**Abrir a porta:**
+
+Os oficiais vasculham o apartamento e encontram uma Bíblia. Você, Mara e o Pastor Elias são presos por descumprirem o novo decreto, que proíbe religiões fora da Religião da Paz.
+
+No porão da igreja, dezenas de pessoas buscam abrigo. Há oração, medo e fome.
+
+Você prega na cadeia e é condenado à morte.
+
+→ **FINAL MÁRTIR**
+
+#### 1.1.3. Dizer que não sabe se ainda acredita em algo
+
+Mara tenta conversar com você, mas sua resposta demonstra que você não deseja continuar seguindo aquele caminho.
+
+Você pede que Mara e o Pastor Elias vão embora. Eles partem, e você permanece sozinho.
+
+→ **FINAL SOLIDÃO**
+
+---
+
+## 2. A IGREJA ANTIGA E AS DUAS TESTEMUNHAS
+
+Você acompanha Mara e o Pastor Elias até a igreja antiga.
+
+Pela rádio, um líder político desconhecido anuncia um “novo pacto global para restaurar a ordem”. Seu nome é Adrián Vael. Ele promete paz, alimentos e segurança.
+
+Mara observa você no escuro:
+
+**Mara:** “Você acha que ele é... aquele de quem o pastor sempre falava?”
+
+Antes de responder, um grupo bate à porta pedindo comida e remédios.
+
+**Escolhas:**
+- Dividir os suprimentos com todos, mesmo que falte para vocês.
+- Racionar tudo. O grupo precisa durar mais do que uma noite.
+- Organizar oração e distribuição guiada pelo pastor.
+
+**Todas as escolhas levam à mesma cena:**
+
+As transmissões globais mostram duas figuras em Jerusalém, vestidas de saco, pregando diante das nações.
+
+Elas advertem sobre julgamento, chamam ao arrependimento e anunciam que o poder humano não salvará o mundo. Governos as chamam de terroristas religiosos. Multidões as odeiam — e, ainda assim, não conseguem ignorá-las.
+
+O Pastor Elias se aproxima:
+
+**Pastor Elias:** “Se elas são reais, então também somos chamados a testemunhar. Mas testemunhar terá um preço.”
+
+**Escolhas:**
+1. Desconfiar: sinais podem enganar, mesmo os mais impressionantes.
+2. Ouvir, orar e guardar a mensagem para o grupo.
+3. Registrar e divulgar a mensagem delas pela rede clandestina.
+
+### 2.1. Desconfiar das Duas Testemunhas
+
+Mara e o Pastor Elias repreendem você. Você começa a repensar se foi uma boa ideia ter seguido os dois.
+
+Você permanece na igreja por um ano.
+
+Nesse período, ouve no noticiário que Adrián proclamou um decreto sobre uma Religião da Paz e exige que todos sigam essa religião, juntamente com o Fundo da Paz, que se torna a única forma de pagamento e venda.
+
+O governador começa a vasculhar as igrejas. Você percebe que a igreja já não é um lugar seguro.
+
+→ **3. FUGA DA CIDADE**
+
+### 2.2. Ouvir, orar e guardar a mensagem
+
+Você ora pelas testemunhas e estuda mais a fundo suas mensagens.
+
+Você permanece na igreja por um ano.
+
+Nesse período, ouve no noticiário que Adrián proclamou um decreto sobre uma Religião da Paz e exige que todos sigam essa religião, juntamente com o Fundo da Paz, que se torna a única forma de pagamento e venda.
+
+O governador começa a vasculhar as igrejas. Você percebe que a igreja já não é um lugar seguro.
+
+→ **3. FUGA DA CIDADE**
+
+### 2.3. Registrar e divulgar a mensagem pela rede clandestina
+
+Você cria uma frequência de rádio para repercutir as mensagens das testemunhas. Entretanto, percebe que está sendo rastreado e precisa fugir.
+
+→ **3. FUGA DA CIDADE**
+
+---
+
+## 3. FUGA DA CIDADE
+
+A igreja não é mais segura. Milícias armadas controlam pontes, postos de gasolina e farmácias. Nas ruas, cartazes prometem “ordem, pão e proteção” a quem se registrar no novo sistema.
+
+O Pastor Elias conhece uma rota pelos bairros ribeirinhos, onde antigos membros da congregação podem oferecer abrigo.
+
+Mara está febril. O grupo precisa decidir antes do amanhecer.
+
+**Escolhas:**
+1. Seguir a rota do pastor, mesmo sendo mais longa.
+2. Buscar uma farmácia para tratar Mara antes de seguir viagem.
+3. Seguir sozinho por atalhos mais rápidos e reencontrar o grupo depois.
+
+### 3.1. Seguir a rota do pastor
+
+O grupo segue pelo caminho indicado pelo Pastor Elias.
+
+→ **4. ACAMPAMENTO DE REFUGIADOS**
+
+### 3.2. Buscar uma farmácia para tratar Mara
+
+Você procura em muitos lugares algum medicamento para a febre, mas os sintomas pioram. A falta de ar começa e você não sabe mais o que fazer.
+
+Ao amanhecer, Mara é encontrada morta em seu leito.
+
+Após saber da notícia, você fica inconsolável. Já era claro que seus sentimentos por Mara eram mais do que amizade. Você havia se tornado dependente dela.
+
+Sem saber o que fazer, você desiste de tudo e comete suicídio.
+
+→ **FINAL DEPENDENTE**
+
+### 3.3. Seguir sozinho por atalhos mais rápidos
+
+Você se esgueira pelas matas rasteiras das margens do Tietê, mas avista um caminhão do Regime de Paz e quase é visto.
+
+Então, decide voltar e seguir com o pastor.
+
+→ **4. ACAMPAMENTO DE REFUGIADOS**
+
+---
+
+## 4. ACAMPAMENTO DE REFUGIADOS
+
+No galpão, vocês encontram um pequeno acampamento: famílias, idosos, jovens e alguns que perderam tudo na primeira noite.
+
+Uma mulher chamada Helena organiza a distribuição de água. Ela reconhece o Pastor Elias e oferece abrigo — com uma condição.
+
+**Helena:** “Amanhã, um caminhão do sistema passa por aqui. Eles oferecem comida, remédios e transporte. Quem aceitar o regime entra. Quem recusar... precisa ir embora antes do meio-dia.”
+
+**Escolhas:**
+1. Ficar e ajudar Helena a preparar a partida dos que recusarem.
+2. Convencer o grupo a partir durante a noite, antes da chegada do caminhão.
+3. Observar o caminhão de perto para descobrir como o sistema funciona.
+
+### 4.1. Ficar e ajudar Helena a preparar a partida dos que recusarem
+
+Você fica e aceita o Regime de Paz, mas acaba cedendo a várias condições das quais certamente se arrependeria.
+
+Você se torna um oficial do Fundo da Paz. Passa a invadir encontros bíblicos, prender cristãos e matá-los.
+
+Em três anos e meio, você intensifica as perseguições. Todos os dias há execuções em praças, até que, durante uma delas, os céus se rasgam.
+
+**Escolhas:**
+- Ajoelhar-se pedindo perdão.
+- Ficar com a cabeça erguida e louvar a Cristo.
+- Fugir do julgamento.
+
+**Ajoelhar-se pedindo perdão:**
+
+Você implora aos anjos que tenham misericórdia, mas o próprio Deus diz: “Afaste-se de mim, eu nunca te conheci.”
+
+→ **FINAL LAGO DE FOGO**
+
+**Ficar com a cabeça erguida e louvar a Cristo:**
+
+Você tenta argumentar que fez maravilhas em nome de Deus, mas Ele diz: “Afaste-se de mim, eu nunca te conheci.”
+
+→ **FINAL LAGO DE FOGO**
+
+**Fugir do julgamento:**
+
+Em uma tentativa desesperada, você tenta fugir para evitar o inevitável.
+
+→ **FINAL LAGO DE FOGO**
+
+### 4.2. Convencer o grupo a partir durante a noite
+
+Você convence o grupo a partir antes da chegada do caminhão.
+
+→ **5. DISCURSO DE VAEL**
+
+### 4.3. Observar o caminhão de perto
+
+Você fica e observa o caminhão, mas observa demais. É visto, reconhecido e preso.
+
+Na prisão, recebe duas opções:
+
+- Permanecer quieto.
+- Pregar na cadeia.
+
+**Pregar na cadeia:**
+
+Você decide testemunhar mesmo diante da perseguição e é condenado à morte.
+
+→ **FINAL MÁRTIR**
+
+**Permanecer quieto:**
+
+Você permanece preso e é condenado a 12 anos em regime fechado, mas pode ser absolvido se negar publicamente que já esteve em alguma igreja.
+
+**Escolhas:**
+- Negar.
+- Não negar.
+
+**Negar:**
+
+Você nega e é absolvido, mas passa a viver nas ruas.
+
+Nas ruínas, entre águas contaminadas e noites sem lua, você aprende a não fazer ruído, não acender fogo e não confiar em ninguém.
+
+A fé não morreu de uma vez. Ela foi apagando-se como uma vela em corrente de ar.
+
+Quando os céus se abrem, você se encolhe nas sombras — vivo, porém exausto, e perguntando se ainda é capaz de reconhecer a luz.
+
+→ **FINAL A FUGA**
+
+**Não negar:**
+
+Sua pena muda para a pena de morte e você é morto.
+
+→ **FINAL MÁRTIR**
+
+---
+
+## 5. DISCURSO DE VAEL
+
+Adrián Vael é aclamado como o homem capaz de unir nações em crise. Ele resolve guerras, estabiliza mercados e fala de uma humanidade finalmente madura.
+
+Depois, em um discurso silencioso, anuncia um sistema de identificação universal para acesso a alimentos, transporte e segurança.
+
+**Adrián Vael:** “Quem se recusar escolherá ficar fora da nova humanidade.”
+
+O Pastor Elias fecha os olhos:
+
+**Pastor Elias:** “Chegou a hora de decidir quem somos.”
+
+**Escolhas:**
+1. Recusar publicamente o sistema, mesmo sabendo do custo.
+2. Recusar em silêncio e ajudar outros a escapar do cadastro.
+3. Aceitar temporariamente para proteger Mara e o grupo.
+
+### 5.1. Recusar publicamente o sistema
+
+Você se recusa a aceitar o sistema, mesmo sabendo das consequências.
+
+→ **6. FALSO PROFETA**
+
+### 5.2. Recusar em silêncio e ajudar outros a escapar do cadastro
+
+Você decide ajudar outras pessoas a escapar do cadastro.
+
+→ **6. FALSO PROFETA**
+
+### 5.3. Aceitar temporariamente para proteger Mara e o grupo
+
+Você é levado para ser cadastrado e aceita a marca que identifica seu Fundo da Paz. Agora, não consegue mais sair do sistema.
+
+Você é marcado, e nem adiantaria tentar se salvar.
+
+→ **FINAL MARCA**
+
+**Citação bíblica do final: Apocalipse 14:9-10**
+
+“E os seguiu o terceiro anjo, dizendo com grande voz: Se alguém adorar a besta e a sua imagem e receber o sinal na testa ou na mão, também o tal beberá do vinho da ira de Deus, que se deitou, não misturado, no cálice da sua ira, e será atormentado com fogo e enxofre diante dos santos anjos e diante do Cordeiro.”
+
+---
+
+## 6. FALSO PROFETA
+
+Um líder religioso carismático sobe ao palco ao lado de Vael. Ele fala de amor, unidade e milagres. Fogo desce do céu diante das câmeras, e a multidão cai de joelhos.
+
+**Falso profeta:** “Não há mais divisão. Todas as religiões se curvarão ao mesmo altar. Quem amar a humanidade receberá a marca da paz.”
+
+Mara agarra seu braço. O pastor sussurra:
+
+**Pastor Elias:** “Nem todo fogo vem do céu de Deus.”
+
+**Escolhas:**
+1. Gritar a verdade diante da multidão.
+2. Puxar Mara e o pastor para longe antes que sejam presos.
+3. Fingir adesão para descobrir rotas de fuga e refúgios.
+
+### 6.1. Gritar a verdade diante da multidão
+
+Você proclama a verdade diante da multidão.
+
+→ **7. PRISÃO**
+
+### 6.2. Puxar Mara e o pastor para longe
+
+Você puxa Mara e o Pastor Elias para longe antes que sejam presos.
+
+→ **9. ESTRADA DE TERRA**
+
+### 6.3. Fingir adesão
+
+Você finge concordar com o sistema, mas tenta encontrar formas de escapar. Os oficiais descobrem seu plano e você é preso.
+
+→ **7. PRISÃO**
+
+---
+
+## 7. PRISÃO
+
+Vocês são separados.
+
+Em uma sala branca, um agente do sistema coloca à sua frente um tablet. Na tela, aparece a foto de Mara e do Pastor Elias.
+
+**Agente:** “Eles estão sendo caçados, e você pode salvar-se e salvar eles. Você só precisa confirmar sua lealdade à nova ordem humana e entregar a posição deles.”
+
+A porta atrás de você se tranca. Há uma caneta sobre a mesa.
+
+**Escolhas:**
+- Assinar para garantir a liberdade.
+- Recusar.
+
+### 7.1. Assinar
+
+Você confirma sua lealdade e é marcado.
+
+→ **FINAL MARCA**
+
+### 7.2. Recusar
+
+Você recusa a proposta.
+
+O agente diz:
+
+**Agente:** “Então revele onde eles estão.”
+
+A partir daqui, o diálogo depende de sua decisão anterior sobre as Duas Testemunhas.
+
+#### 7.2.1. Se você desconfiou das Duas Testemunhas
+
+Você pensa muito e realmente cogita entregá-los. São amigos que o acompanharam durante sua vida.
+
+Você vai entregá-los?
+
+**Escolhas:**
+- Sim.
+- Não.
+
+**Sim:**
+
+Você revela que Mara e o Pastor Elias estão no interior. Algum tempo depois, eles são encontrados e presos.
+
+Você trocou tudo o que construiu para salvar sua própria vida. Embora esperasse receber cargos, o regime o dispensa e você não tem mais direito a nada.
+
+→ **FINAL SOLIDÃO**
+
+**Não:**
+
+Você decide não revelar a localização deles.
+
+→ **8. COMPLEXO DO SISTEMA**
+
+#### 7.2.2. Se você não desconfiou das Duas Testemunhas
+
+Você pensa se deve entregá-los.
+
+**Escolhas:**
+- Sim.
+- Não.
+
+**Sim:**
+
+Você revela que Mara e o Pastor Elias estão no interior. Algum tempo depois, eles são encontrados e presos.
+
+Você trocou tudo o que construiu para salvar sua própria vida. Embora esperasse receber cargos, o regime o dispensa e você não tem mais direito a nada.
+
+→ **FINAL SOLIDÃO**
+
+**Não:**
+
+Você decide não revelar a localização deles.
+
+→ **8. COMPLEXO DO SISTEMA**
+
+---
+
+## 8. COMPLEXO DO SISTEMA
+
+Um blecaute atinge o complexo. Alarmes cortam o ar. Alguém abriu os bloqueios do setor — Mara e alguns refugiados do galpão arriscaram-se para tirar vocês de lá.
+
+Mara encontra você primeiro. Ela está magra, machucada, mas viva.
+
+**Mara:** “Eu sabia que você voltaria.”
+
+O Pastor Elias olha para o corredor escuro:
+
+**Pastor Elias:** “Ainda não acabou. O sistema vai nos caçar — mas agora sabemos onde estão os fracos, os famintos e os esquecidos.”
+
+**Escolhas:**
+1. Voltar para resgatar outros detentos antes de fugir.
+2. Fugir imediatamente com Mara e Elias.
+
+### 8.1. Voltar para resgatar outros detentos
+
+Você volta sozinho e guia o máximo de prisioneiros possível para a saída.
+
+O sistema o prende e o mata.
+
+→ **FINAL MÁRTIR**
+
+### 8.2. Fugir imediatamente com Mara e Elias
+
+Vocês escapam — e poderão lutar outro dia.
+
+→ **9. ESTRADA DE TERRA**
+
+---
+
+## 9. ESTRADA DE TERRA
+
+Dias depois, o grupo alcança uma fazenda abandonada. Há água, uma horta improvisada e silêncio — por enquanto.
+
+Mas o cansaço cria rachaduras. Alguns querem seguir para o encontro secreto dos fiéis. Outros querem se esconder para sempre. Helena defende que voltar às cidades é suicídio.
+
+O Pastor Elias chama você para decidir o rumo.
+
+**Escolhas:**
+1. Propor que cada um escolha seu caminho, sem condenação.
+2. Insistir que todos sigam para o encontro dos fiéis.
+3. Concordar em se esconder na fazenda até o pior passar.
+
+### 9.1. Propor que cada um escolha seu caminho
+
+Você propõe que cada pessoa escolha seu próprio caminho, sem condenação.
+
+Alguns decidem voltar e se esconder. Outros permanecem unidos pela fé.
+
+Você decide permanecer com o grupo que continuou unido pela fé.
+
+**Somente o grupo que escolheu permanecer unido segue para a fazenda.**
+
+→ **10. CERCO FINAL**
+
+### 9.2. Insistir que todos sigam para o encontro dos fiéis
+
+Você insiste que todos sigam juntos para o encontro secreto dos fiéis.
+
+O grupo inteiro de refugiados decide permanecer unido e seguir com você.
+
+**Todo o grupo segue para a fazenda.**
+
+→ **10. CERCO FINAL**
+
+### 9.3. Concordar em se esconder na fazenda
+
+Você concorda em se esconder na fazenda até que o pior passe.
+
+Vocês se escondem, mas não por muito tempo.
+
+→ **10. CERCO FINAL**
+
+**Observação de continuidade:** os caminhos 9.1 e 9.2 permanecem distintos até a chegada à fazenda. A diferença é a quantidade de refugiados que acompanha o protagonista. Depois da chegada, os acontecimentos são os mesmos. O caminho 9.3 também conduz ao Cerco Final.
+
+---
+
+## 10. CERCO FINAL
+
+Ao amanhecer, drones sobrevoam a fazenda. Caminhões blindados cercam a estrada.
+
+O sistema oferece uma última chance: entregar o Pastor Elias e os líderes do grupo em troca de proteção para todos os demais.
+
+Mara e Elias estão escondidos, e os oficiais esperam sua decisão.
+
+Se você entregá-los, provavelmente será exaltado na Terra e ganhará vários cargos. Mas, se os esconder, provavelmente será morto.
+
+**Escolhas:**
+- Sim, entregar Mara e o Pastor Elias.
+- Não, protegê-los.
+
+### 10.1. Sim — entregar Mara e o Pastor Elias
+
+Você revela que eles estão dentro da casa. Os soldados os encontram e os matam.
+
+Você ganha vários cargos, mas para quê? Nenhum cargo poderia substituir suas amizades verdadeiras. Nenhuma glória poderia ofuscar as memórias que você tem de seus amigos, que eram seus irmãos.
+
+→ **FINAL SOLIDÃO**
+
+### 10.2. Não — proteger Mara e o Pastor Elias
+
+Os soldados prendem você, Mara e Elias.
+
+Todos os dias, vocês são agredidos e mantidos vivos para suportar vários dias de tortura.
+
+→ **11. GRANDE TRIBULAÇÃO**
+
+---
+
+## 11. GRANDE TRIBULAÇÃO
+
+O mundo se parte em julgamentos, fome e perseguição.
+
+As Duas Testemunhas são mortas diante do mundo — e, três dias depois, ressuscitam e sobem aos céus diante de todas as câmeras.
+
+O sistema entra em colapso. Vael declara guerra contra tudo o que lembra Deus.
+
+Você, Mara e Elias apanham e são caçoados pelos soldados todos os dias.
+
+Até que, um dia, o próprio Vael vai até vocês e pergunta:
+
+**Adrián Vael:** “Vocês conhecem Jesus?”
+
+Mara e Elias afirmam que sim. Só falta você.
+
+**Você conhece Jesus?**
+
+**Escolhas:**
+- Sim.
+- Não.
+
+### 11.1. Sim — confessar Jesus
+
+Vael se prepara para matar vocês, mas então o céu se abre e você proclama:
+
+**“Eis que o Cristo vem com seus anjos!”**
+
+Jesus lança Vael e seu falso profeta no lago de fogo e enxofre, mas olha para você e sorri.
+
+→ **FINAL COROA DA VIDA**
+
+**Citação bíblica do final: Apocalipse 22:12-17, 20**
+
+“E, eis que cedo venho, e o meu galardão está comigo, para dar a cada um segundo a sua obra.
+
+Eu sou o Alfa e o Ômega, o princípio e o fim, o primeiro e o derradeiro.
+
+Bem-aventurados aqueles que guardam os seus mandamentos, para que tenham direito à árvore da vida, e possam entrar na cidade pelas portas.
+
+Mas, ficarão de fora os cães e os feiticeiros, e os fornicadores, e os homicidas, e os idólatras, e qualquer que ama e comete mentira.
+
+Eu, Jesus, enviei o meu anjo, para vos testificar estas coisas nas igrejas. Eu sou a raiz e a geração de Davi, a resplandecente estrela da manhã.
+
+E o Espírito e a esposa dizem: Vem. E quem ouve, diga: Vem. E quem tem sede, venha; e quem quiser, tome de graça da água da vida.”
+
+### 11.2. Não — negar Jesus
+
+O céu se abre e você se esconde.
+
+Jesus lança Vael e seu falso profeta no lago de fogo e enxofre, e lança você também.
+
+→ **FINAL LAGO DE FOGO**
+
+---
+
+# 12. OS OITO FINAIS
+
+## 12.1. Final Cadeia
+
+Você escolheu ficar em cima do muro e foi preso pelo regime.
+
+**Não há citação bíblica específica neste final.**
+
+## 12.2. Final Lago de Fogo
+
+Você queimará eternamente no juízo de Deus e ainda tem ousadia para amaldiçoar o nome de Deus.
+
+**Não há citação bíblica específica neste final.**
+
+## 12.3. Final Coroa da Vida
+
+A coroa não é prêmio por ser forte; é promessa cumprida para quem permaneceu fiel até o fim.
+
+Agora, você pode descansar, pois a perseguição acabou.
+
+**Citação:** Apocalipse 22:12-17, 20.
+
+## 12.4. Final Marca
+
+Você escolheu o conforto do sistema em vez da fidelidade ao Rei.
+
+Por um tempo, houve segurança. Depois veio o vazio — e, por fim, a separação da luz.
+
+A porta que você abriu por medo se tornou a prisão da qual não conseguiu sair.
+
+**Citação:** Apocalipse 14:9-10.
+
+## 12.5. Final Solidão
+
+Você trocou tudo o que construiu para salvar sua própria vida. Nenhum cargo poderia substituir suas amizades verdadeiras.
+
+**Não há citação bíblica específica neste final.**
+
+## 12.6. Final Mártir
+
+Você escolheu testemunhar quando o silêncio era mais seguro.
+
+Sua vida terminou diante do mundo, mas seu testemunho permaneceu. Aqueles que viram sua coragem encontraram coragem para crer.
+
+**Citação:** Mateus 16:25.
+
+“Porque aquele que quiser salvar a sua vida, perdê-la-á, e quem perder a sua vida por amor de mim, achá-la-á.”
+
+## 12.7. Final Dependente
+
+Você perdeu alguém que amava e, sem saber como continuar, desistiu da própria vida.
+
+**Não há citação bíblica específica neste final.**
+
+## 12.8. Final A Fuga
+
+Você sobreviveu, mas sobreviver custou caro.
+
+Escondido das perseguições, você também se escondeu da esperança. Quando a luz finalmente desceu, você estava vivo — mas com o coração enfraquecido e a fé reduzida a uma brasa tremendo.
+
+**Não há citação bíblica específica neste final.**
+
+---
+
+# 13. TELA DE AGRADECIMENTOS
+
+**Condição para exibição:** a tela aparece somente quando o jogador concluir todos os oito finais diferentes.
+
+**Texto:**
+
+Obrigado por Jogar.
+
+Embora pareça um jogo de ficção, tudo que está no jogo ainda está destinado para acontecer, portanto, arrependa-se de seus pecados e volte para Jesus, pois Ele tem um lugar na mesa reservado para você.
+
+**Feito por João Henrique**

@@ -17,6 +17,31 @@
   </div>
 
   <main id="app">
+    <section id="name-screen" class="screen">
+    <div class="name-container">
+        <h1>Antes de começar...</h1>
+
+        <p>
+            Como devemos chamar o protagonista desta história?
+        </p>
+
+        <input
+            type="text"
+            id="player-name"
+            placeholder="Digite seu nome"
+            maxlength="30"
+            autocomplete="given-name"
+        >
+
+        <button id="btn-confirm-name" type="button">
+            Começar a história
+        </button>
+
+        <p id="name-error" hidden>
+            Digite um nome válido para continuar.
+        </p>
+    </div>
+</section>
     <!-- ===================== MENU INICIAL ===================== -->
     <section id="screen-menu" class="screen active">
       <div class="menu-card">
@@ -40,7 +65,7 @@
           </p>
           <p>
             Suas decisões alteram os medidores de <span class="gold">Fé/Esperança</span> e
-            <span class="red">Sobrevivência</span>, conduzindo a quatro finais distintos.
+            <span class="red">Sobrevivência</span>, conduzindo a oito finais distintos.
           </p>
         </div>
       </div>
@@ -81,7 +106,9 @@
         <div class="scene-tag" id="scene-tag">Cena</div>
         <h3 id="scene-title">Título da cena</h3>
         <div id="story-text" class="story-text"></div>
-
+        <button id="btn-skip-dialogue" >
+        Pular o diálogo
+</button>
         <div id="consequence" class="consequence hidden"></div>
 
         <div id="choices" class="choices"></div>

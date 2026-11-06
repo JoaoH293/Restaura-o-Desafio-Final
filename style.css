@@ -20,7 +20,27 @@
     --font: "Georgia", "Times New Roman", serif;
     --font-ui: "Segoe UI", system-ui, -apple-system, sans-serif;
   }
-  
+  #btn-skip-dialogue {
+    margin-top: 12px;
+    padding: 9px 16px;
+    background: transparent;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration:underline;
+    font-size: 13px;
+    transition: 0.2s ease;
+}
+
+#btn-skip-dialogue:hover {
+    background: #ffffff;
+    color: black;
+}
+
+#btn-skip-dialogue[hidden] {
+    display: none;
+}
   * {
     box-sizing: border-box;
   }
@@ -78,7 +98,7 @@
   }
   
   .glow-red {
-    background: var(--red);
+    background: #e8e8eb;
     bottom: -25vmax;
     left: -20vmax;
     animation-delay: -4s;
@@ -359,14 +379,49 @@
   .choice:nth-child(4) { animation-delay: .29s; }
   
   .choice:hover {
-    border-color: var(--gold);
-    background: var(--gold-soft);
+    color: black;
+    background: #d8dbe1;
     transform: translateY(-2px);
   }
-  
+  .name-container {
+    width: min(90%, 450px);
+    margin: 0 auto;
+    text-align: center;
+}
+
+#player-name {
+    width: 100%;
+    padding: 14px;
+    margin: 20px 0;
+    border: 1px solid #8064c9;
+    border-radius: 8px;
+    background: #10121c;
+    color: white;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+#btn-confirm-name {
+    padding: 13px 24px;
+    border: none;
+    border-radius: 8px;
+    background: #8064c9;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+#btn-confirm-name:hover {
+    filter: brightness(1.15);
+}
+
+#name-error {
+    color: #ff6464;
+    margin-top: 12px;
+}
   .choice.danger:hover {
-    border-color: var(--red);
-    background: rgba(179,36,44,.1);
+    color:black;
+    background: #d8dbe1;
   }
   
   @keyframes choiceIn {
