@@ -1567,7 +1567,7 @@ Narrador: — O mundo considerava sua resistência uma derrota. Mas aquilo que p
 
 Narrador: — As promessas de Deus não haviam falhado. A esperança dos fiéis estava prestes a se cumprir.
 
-Narrador: — De repente, o céu se abre, e você ouve uma voz vinda do céu dizendo: "Venham, benditos do meu Pai! Recebam como herança o reino que foi preparado para vocês desde a criação do mundo.
+Narrador: — De repente, o céu se abre, e você ouve uma voz vinda do céu dizendo: "Venham, benditos do meu Pai! Recebam como herança o reino que foi preparado para vocês desde a criação do mundo."
 
 `,
     [
