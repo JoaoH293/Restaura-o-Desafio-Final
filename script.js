@@ -1564,7 +1564,12 @@ Você: — Jesus Cristo é o meu Senhor. Não há outro a quem eu possa entregar
 
 Narrador: — O mundo considerava sua resistência uma derrota. Mas aquilo que parecia o fim era, na verdade, o início da eternidade.
 
-Narrador: — As promessas de Deus não haviam falhado. A esperança dos fiéis estava prestes a se cumprir.`,
+
+Narrador: — As promessas de Deus não haviam falhado. A esperança dos fiéis estava prestes a se cumprir.
+
+Narrador: — De repente, o céu se abre, e você ouve uma voz vinda do céu dizendo: "Venham, benditos do meu Pai! Recebam como herança o reino que foi preparado para vocês desde a criação do mundo.
+
+`,
     [
         choice("Ver o desfecho.", "final_coroa")
     ]
