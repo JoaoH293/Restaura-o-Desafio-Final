@@ -63,7 +63,7 @@ Por ser uma aplicação baseada em **JavaScript Vanilla**, **HTML5** e **CSS3**,
 
 1. **Clonar o repositório:**
    ```bash
-   git clone https://github.com/seu-usuario/restauracao-o-desafio-final.git
+   git clone https://github.com/JoaoH293/Restaura-o-Desafio-Final.git
    ```
 
 2. **Executar o jogo:**
